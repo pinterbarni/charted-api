@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "charted-bff",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

@@ -1,0 +1,11 @@
+meta {
+  name: Get User Profile
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/social/profile/{{userId}}
+  body: none
+  auth: inherit
+}

@@ -1,0 +1,11 @@
+meta {
+  name: Delete Trail
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/trails/{{trailId}}
+  body: none
+  auth: inherit
+}

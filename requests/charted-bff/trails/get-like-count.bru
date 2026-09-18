@@ -1,0 +1,11 @@
+meta {
+  name: Get Like Count
+  type: http
+  seq: 8
+}
+
+get {
+  url: {{baseUrl}}/trails/{{trailId}}/likes
+  body: none
+  auth: inherit
+}

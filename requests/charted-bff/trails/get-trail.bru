@@ -1,0 +1,11 @@
+meta {
+  name: Get Trail
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/trails/{{trailId}}
+  body: none
+  auth: inherit
+}

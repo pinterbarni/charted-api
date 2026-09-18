@@ -1,0 +1,27 @@
+meta {
+  name: Plan Route
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/routes/plan
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "costing": "pedestrian",
+    "title": "Test hike",
+    "locations": [
+      {"lon": 19.0402, "lat": 47.4979},
+      {"lon": 19.0502, "lat": 47.5079}
+    ]
+  }
+}
+
+script:post-response {
+  const routeId = res.getBody().id;
+  bru.setVar("routeId", routeId);
+}

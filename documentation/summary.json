@@ -1,0 +1,12 @@
+{
+  "children": [
+    {
+      "title": "Swagger - API Reference",
+      "file": "pages/api-reference.md"
+    },
+    {
+      "title": "ER Diagram",
+      "file": "pages/entity-relations.md"
+    }
+  ]
+}

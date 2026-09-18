@@ -1,0 +1,11 @@
+meta {
+  name: Get trails shared by user
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/trails/user/{{userId}}
+  body: none
+  auth: inherit
+}

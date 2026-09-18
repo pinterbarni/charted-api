@@ -1,0 +1,46 @@
+# TODO: Move me out of the codebase. Don't commit!
+services:
+  charted-bff:
+    build: .
+    platform: linux/arm64
+    container_name: charted-bff
+    restart: unless-stopped
+    env_file: .env.production
+    ports:
+      - '8089:3000'
+    depends_on:
+      charted-postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -qO- http://localhost:3000/api/health || exit 1']
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - charted-network
+  charted-postgres:
+    image: imresamu/postgis:16-3.4
+    platform: linux/arm64
+    container_name: charted-postgres
+    restart: unless-stopped
+    env_file: .env.production
+    environment:
+      POSTGRES_USER: charted
+      POSTGRES_PASSWORD: cahrted
+      POSTGRES_DB: charted
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U charted -d charted']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    networks:
+      - charted-network
+volumes:
+  postgres_data:
+networks:
+  charted-network:
+    driver: bridge

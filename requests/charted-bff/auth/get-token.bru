@@ -1,0 +1,27 @@
+meta {
+  name: Get Token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{keycloakUrl}}/protocol/openid-connect/token
+  body: formUrlEncoded
+  auth: none
+}
+
+headers {
+  Content-Type: application/x-www-form-urlencoded
+}
+
+body:form-urlencoded {
+  grant_type: password
+  client_id: charted-mobile
+  username: {{testUsername}}
+  password: {{testPassword}}
+}
+
+script:post-response {
+  const token = res.getBody().access_token;
+  bru.setVar("token", token);
+}

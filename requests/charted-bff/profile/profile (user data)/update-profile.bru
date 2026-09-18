@@ -1,0 +1,22 @@
+meta {
+  name: Update Profile
+  type: http
+  seq: 1
+}
+
+patch {
+  url: {{baseUrl}}/profile/me
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "displayName": "Barnabas",
+    "bio": "Hiking enthusiast"
+  }
+}

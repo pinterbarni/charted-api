@@ -1,0 +1,11 @@
+meta {
+  name: Unblock User
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseUrl}}/social/block/{{userId}}
+  body: none
+  auth: inherit
+}

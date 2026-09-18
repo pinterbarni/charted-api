@@ -1,0 +1,11 @@
+meta {
+  name: Get Recent Routes
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/routes/me/recent
+  body: none
+  auth: inherit
+}

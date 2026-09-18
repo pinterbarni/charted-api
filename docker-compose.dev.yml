@@ -1,0 +1,17 @@
+services:
+  charted-postgres-dev:
+    image: postgis/postgis:16-3.4
+    container_name: charted-postgres-dev
+    restart: unless-stopped
+    env_file: .env.development
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - '${DB_PORT}:5432'
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_dev_data:

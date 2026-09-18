@@ -1,0 +1,11 @@
+meta {
+  name: Get Following
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/social/{{userId}}/following
+  body: none
+  auth: inherit
+}

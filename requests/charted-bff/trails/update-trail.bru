@@ -1,0 +1,19 @@
+meta {
+  name: Update Trail
+  type: http
+  seq: 6
+}
+
+patch {
+  url: {{baseUrl}}/trails/{{trailId}}
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "isShared": true,
+    "title": "Updated title",
+    "description": "Updated description"
+  }
+}

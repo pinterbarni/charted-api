@@ -1,0 +1,11 @@
+meta {
+  name: Block User
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/social/block/{{userId}}
+  body: none
+  auth: inherit
+}

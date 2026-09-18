@@ -1,0 +1,11 @@
+meta {
+  name: Get Recent Trails
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/trails/me/recent
+  body: none
+  auth: inherit
+}

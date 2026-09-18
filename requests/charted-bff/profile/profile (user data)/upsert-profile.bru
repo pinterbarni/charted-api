@@ -1,0 +1,18 @@
+meta {
+  name: Upsert Profile
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/profile/me
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "displayName": "Barnabas",
+    "bio": "Hiking enthusiast"
+  }
+}

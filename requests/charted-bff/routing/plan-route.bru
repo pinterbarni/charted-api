@@ -1,0 +1,26 @@
+meta {
+  name: Plan Route
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/routing/route
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "costing": "pedestrian",
+    "locations": [
+      {"lon": 19.0402, "lat": 47.4979},
+      {"lon": 19.0502, "lat": 47.5079}
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+meta {
+  name: Create Trail
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/trails
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "title": "Morning hike",
+    "description": "A nice walk in Budapest",
+    "distanceM": 5000,
+    "distanceUnit": "km",
+    "distanceOriginal": 5.0,
+    "durationS": 3600,
+    "elevationGainM": 120,
+    "startedAt": "2026-03-31T08:00:00Z",
+    "finishedAt": "2026-03-31T09:00:00Z"
+  }
+}
+
+script:post-response {
+  const trailId = res.getBody().id;
+  bru.setVar("trailId", trailId);
+}
