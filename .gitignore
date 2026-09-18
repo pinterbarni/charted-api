@@ -1,0 +1,55 @@
+# NestJS specific
+/dist/
+/node_modules/
+/build/
+/tmp/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# dotenv environment variable files
+.env
+.env.development
+.env.test
+.env.production
+.env.staging
+.env.local
+
+# temp directory
+.temp
+.tmp
+
+# IDE and editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+/coverage/
+/test-results/
+
+# NestJS cache
+.nest/
+
+# TypeScript
+*.tsbuildinfo
+
+# PM2
+ecosystem.config.js.bak
+
+# Docs
+docs/
+
+# SQL
+*.session.sql
